@@ -1,3 +1,4 @@
+# Lab 01 – Apache Log Analysis (Splunk SOC Triage)
 ## Environment Set Up ##
 - Installed Splunk Enterprise (Local Install)
 - Uploaded Sample Apache access log file
