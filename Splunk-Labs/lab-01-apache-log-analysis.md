@@ -38,34 +38,35 @@ index=main sourcetype="apache_access" status=404 | stats count as not_found by c
 208.91.156.11 is the most suspicious ip cause it has too many 404 requests.
 It might be automated probe scanning or directory scanning.
 
-|| Percentage calculation from normal request to 404 requests of this ip ||
-
+## Percentage calculation from normal request to 404 requests of this ip 
+'''spl
 index=main sourcetype=apache_access clientip="208.91.156.11"
 | stats count as total, sum(eval(status=404)) as not_found
 | eval pct_404=round((not_found/total)*100,2)
-
+'''
 Findings:
        208.91.156.11 have 60 total request and all of them are 404 not found ones so this strongly indicates suspicious behavior.
 
-|| URI Path that was being requested ||
-
+## URI Path that was being requested 
+'''spl
 index=main sourcetype=apache_access clientip="208.91.156.11"
 | stats count by uri_path
 | sort - count
 | head 15
+'''
 
 Output:
 /files/logstash/logstash-1.3.2-monolithic.jar
 
-|| Final Conclusion ||
+## Final Conclusion 
 
 This request suggests the IP was:
 
 Looking for a specific file
 
-2. Possibly probing for exposed Logstash components
+1. Possibly probing for exposed Logstash components
 
-3. Attempting to access outdated or misconfigured infrastructure
+2. Attempting to access outdated or misconfigured infrastructure
 
 Since:
 
