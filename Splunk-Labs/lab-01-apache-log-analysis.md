@@ -1,9 +1,9 @@
 ## Environment Set Up ##
--Installed Splunk Enterprise (Local Install)
--Uploaded Sample Apache access log file
--Index: Main
--Source type: apache_access
--Data_set entries: 10,000
+- Installed Splunk Enterprise (Local Install)
+- Uploaded Sample Apache access log file
+- Index: Main
+- Source type: apache_access
+- Data_set entries: 10,000
 
 ## First Verification Query 
 '''spl
