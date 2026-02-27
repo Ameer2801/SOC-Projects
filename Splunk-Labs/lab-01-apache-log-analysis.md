@@ -80,5 +80,11 @@ It targeted a specific software-related file
 
 This is not normal user browsing.
 
+## SOC Response
+
+- Validate IP reputation
+- Monitor for repeated attempts
+- Escalate if behaviour continues
+- Consider firewall/WAF blocking if confirmed malicious
  
 
